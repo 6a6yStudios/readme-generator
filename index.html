@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📄 README Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 README Generator</h1>
+        <p>Create a professional README file easily! 🚀</p>
+
+        <form id="readmeForm">
+            <fieldset>
+                <legend>📌 Project Details</legend>
+                <label>🔹 Project Name:</label>
+                <input type="text" id="projectName" required>
+
+                <label>📝 Short Description:</label>
+                <textarea id="description" rows="3" required></textarea>
+
+                <label>📸 Header Image Filename (e.g., banner.png):</label>
+                <input type="text" id="headerImage">
+            </fieldset>
+
+            <fieldset>
+                <legend>⚙️ Installation</legend>
+                <label>💻 OS X & Linux:</label>
+                <textarea id="installationLinux" rows="2"></textarea>
+
+                <label>🖥️ Windows:</label>
+                <textarea id="installationWindows" rows="2"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>🚀 Usage</legend>
+                <textarea id="usage" rows="3"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>👨‍💻 Development Setup</legend>
+                <textarea id="devSetup" rows="3"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>📦 Release History</legend>
+                <textarea id="releaseHistory" rows="4" placeholder="Example: 
+- 1.0.0: Initial release 🚀
+- 1.1.0: Bug fixes 🐛
+"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>📜 License</legend>
+                <input type="text" id="license" placeholder="MIT, Apache, etc.">
+            </fieldset>
+
+            <fieldset>
+                <legend>🌍 Meta & Contribution</legend>
+                <label>🔗 GitHub Repository:</label>
+                <input type="text" id="repoLink">
+
+                <label>👤 Your Name:</label>
+                <input type="text" id="author">
+
+                <label>📧 Email:</label>
+                <input type="email" id="email">
+            </fieldset>
+
+            <button type="submit">✨ Generate README</button>
+        </form>
+
+        <h2>📄 Generated README</h2>
+        <pre id="output"></pre>
+        <button id="copyButton">📋 Copy to Clipboard</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
