@@ -76,7 +76,7 @@ npm run test
 ```
 
 ## Screenshots
-![Screenshot](https://media.discordapp.net/attachments/1327377848520151130/1336315677346103368/image.png)
+![Screenshot](im3age.png)
 
 ## License
 MIT
