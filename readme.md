@@ -1,9 +1,7 @@
 # ReadMe-Template-Generator
 > A sleek, easy-to-use README Generator that helps you create professional project documentation with emojis, markdown formatting, and a clean UI. Just fill out the form, and get a ready-to-use README instantly! 🚀📄
 
-![Header Image](banner.png)
-
-## Installation
+![Click Me To Use The Application](https://6a6ystudios.github.io/readme-generator/)
 
 ## Usage
 ```sh
