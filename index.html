@@ -31,16 +31,29 @@
 
                 <label>🖥️ Windows:</label>
                 <textarea id="installationWindows" rows="2"></textarea>
+
+                <label>📦 Installation Command:</label>
+                <input type="text" id="installationCommand" placeholder="e.g., npm install">
             </fieldset>
 
             <fieldset>
                 <legend>🚀 Usage</legend>
+                <label>🖥️ Usage Example:</label>
                 <textarea id="usage" rows="3"></textarea>
+
+                <label>💻 Code Example:</label>
+                <textarea id="usageExample" rows="3" placeholder="e.g., import Component from 'my-project'"></textarea>
             </fieldset>
 
             <fieldset>
                 <legend>👨‍💻 Development Setup</legend>
                 <textarea id="devSetup" rows="3"></textarea>
+
+                <label>🔧 Tech Stack:</label>
+                <input type="text" id="techStack" placeholder="e.g., React, Node.js">
+
+                <label>🚀 Deployment Command:</label>
+                <input type="text" id="deploymentCommand" placeholder="e.g., npm run deploy">
             </fieldset>
 
             <fieldset>
@@ -49,6 +62,21 @@
 - 1.0.0: Initial release 🚀
 - 1.1.0: Bug fixes 🐛
 "></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>🏢 Used By</legend>
+                <input type="text" id="usedBy" placeholder="Company 1, Company 2">
+            </fieldset>
+
+            <fieldset>
+                <legend>✅ Running Tests</legend>
+                <input type="text" id="tests" placeholder="e.g., npm run test">
+            </fieldset>
+
+            <fieldset>
+                <legend>📷 Screenshots</legend>
+                <input type="text" id="screenshot" placeholder="e.g., https://via.placeholder.com/468x300">
             </fieldset>
 
             <fieldset>
@@ -64,16 +92,19 @@
                 <label>👤 Your Name:</label>
                 <input type="text" id="author">
 
+                <label>🔗 GitHub Profile:</label>
+                <input type="text" id="github">
+
                 <label>📧 Email:</label>
                 <input type="email" id="email">
             </fieldset>
 
-            <button type="submit">✨ Generate README</button>
+            <button type="button" onclick="generateReadme()">✨ Generate README</button>
         </form>
 
         <h2>📄 Generated README</h2>
-        <pre id="output"></pre>
-        <button id="copyButton">📋 Copy to Clipboard</button>
+        <textarea id="output" readonly></textarea>
+        <button onclick="copyToClipboard()">📋 Copy to Clipboard</button>
     </div>
 
     <script src="script.js"></script>

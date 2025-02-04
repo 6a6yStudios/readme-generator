@@ -1,53 +1,79 @@
-document.getElementById('readmeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+function generateReadme() {
+    const title = document.getElementById("projectName").value;
+    const description = document.getElementById("description").value;
+    const headerImage = document.getElementById("headerImage").value;
+    const installationLinux = document.getElementById("installationLinux").value;
+    const installationWindows = document.getElementById("installationWindows").value;
+    const installationCommand = document.getElementById("installationCommand").value;
+    const usage = document.getElementById("usage").value;
+    const usageExample = document.getElementById("usageExample").value;
+    const techStack = document.getElementById("techStack").value;
+    const deploymentCommand = document.getElementById("deploymentCommand").value;
+    const usedBy = document.getElementById("usedBy").value;
+    const tests = document.getElementById("tests").value;
+    const screenshot = document.getElementById("screenshot").value;
+    const license = document.getElementById("license").value;
+    const author = document.getElementById("author").value;
+    const github = document.getElementById("github").value;
+    
+    let readmeContent = `# ${title}
 
-    const projectName = document.getElementById('projectName').value.trim();
-    const description = document.getElementById('description').value.trim();
-    const headerImage = document.getElementById('headerImage').value.trim();
-    const installationLinux = document.getElementById('installationLinux').value.trim();
-    const installationWindows = document.getElementById('installationWindows').value.trim();
-    const usage = document.getElementById('usage').value.trim();
-    const devSetup = document.getElementById('devSetup').value.trim();
-    const releaseHistory = document.getElementById('releaseHistory').value.trim();
-    const license = document.getElementById('license').value.trim();
-    const repoLink = document.getElementById('repoLink').value.trim();
-    const author = document.getElementById('author').value.trim();
-    const email = document.getElementById('email').value.trim();
+${description}
 
-    let readme = `# ${projectName}\n> ${description}\n\n`;
+${headerImage ? `![Header Image](${headerImage})\n\n` : ""}
 
-    if (headerImage) {
-        readme += `![Header Image](${headerImage})\n\n`;
-    }
+## Installation
 
-    readme += `## Installation\n\n`;
-    if (installationLinux) {
-        readme += `### OS X & Linux:\n\`\`\`sh\n${installationLinux}\n\`\`\`\n\n`;
-    }
-    if (installationWindows) {
-        readme += `### Windows:\n\`\`\`sh\n${installationWindows}\n\`\`\`\n\n`;
-    }
+\`\`\`bash
+# OS X & Linux
+${installationLinux}
 
-    if (usage) {
-        readme += `## Usage\n\`\`\`sh\n${usage}\n\`\`\`\n\n`;
-    }
+# Windows
+${installationWindows}
 
-    if (devSetup) {
-        readme += `## Development Setup\n\`\`\`sh\n${devSetup}\n\`\`\`\n\n`;
-    }
+# General Installation Command
+${installationCommand}
+\`\`\`
 
-    if (releaseHistory) {
-        readme += `## Release History\n${releaseHistory}\n\n`;
-    }
+## Usage
 
-    readme += `## License\n${license || "MIT"}\n\n`;
-    readme += `## Contributing\n1. Fork it\n2. Create your feature branch\n3. Commit your changes\n4. Push to the branch\n5. Create a Pull Request\n\n`;
-    readme += `## Author\n**${author}** – 📧 ${email}\n[GitHub Repository](${repoLink})\n\n`;
+${usage}
 
-    document.getElementById('output').textContent = readme;
-});
+\`\`\`javascript
+${usageExample}
+\`\`\`
 
-document.getElementById('copyButton').addEventListener('click', function() {
-    navigator.clipboard.writeText(document.getElementById('output').textContent);
-    alert('Copied to clipboard! 📋');
-});
+## Tech Stack
+${techStack}
+
+## Deployment
+\`\`\`bash
+${deploymentCommand}
+\`\`\`
+
+## Used By
+${usedBy}
+
+## Running Tests
+\`\`\`bash
+${tests}
+\`\`\`
+
+## Screenshots
+![Screenshot](${screenshot})
+
+## License
+${license}
+
+## Author
+- ${author} [GitHub](${github})
+`;
+
+    document.getElementById("output").value = readmeContent;
+}
+
+function copyToClipboard() {
+    document.getElementById("output").select();
+    document.execCommand("copy");
+    alert("README copied to clipboard!");
+}
